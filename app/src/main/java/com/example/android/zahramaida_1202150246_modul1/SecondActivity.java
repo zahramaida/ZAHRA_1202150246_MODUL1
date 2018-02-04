@@ -40,7 +40,7 @@ public class SecondActivity extends AppCompatActivity {
         Porsi.setText(""+portion);
         Harga.setText("Rp "+harga);
 
-        if(harga < 65000){
+        if(harga < 65500){
             Toast toast = Toast.makeText(this, "Disini aja makan malamnya", Toast.LENGTH_LONG);
             toast.show();
         } else {
