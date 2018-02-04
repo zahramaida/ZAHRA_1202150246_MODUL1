@@ -26,31 +26,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void eatbus(View view) {
 
-        Intent intent=new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, SecondActivity.class);
         Restoran = "EATBUS";
         Menu = makanan.getText().toString();
         Porsi= Integer.parseInt(jumlah.getText().toString());
-        int Harga = 50000*Porsi;
-        Log.d("total harga","Rp."+Harga);
+        int price = 50000*Porsi;
+        Log.d("total harga","Rp."+price);
         intent.putExtra("Restoran",Restoran); //mengembalikan data ke SecondActiviy
         intent.putExtra("Menu",Menu);
         intent.putExtra("Porsi",Porsi);
-        intent.putExtra("Harga",Harga);
+        intent.putExtra("Harga",price);
         startActivity(intent);
 
     }
 
     public void abnormal(View view) {
 
-        Intent intent=new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, SecondActivity.class);
         Restoran = "ABNORMAL";
         Menu = makanan.getText().toString();
         Porsi = Integer.parseInt(jumlah.getText().toString());
-        int Harga = 30000*Porsi;
+        int price = 30000*Porsi;
         intent.putExtra("Restoran",Restoran); //mengembalikan data ke SecondActivity
         intent.putExtra("Menu",Menu);
         intent.putExtra("Porsi",Porsi);
-        intent.putExtra("Harga",Harga);
+        intent.putExtra("Harga",price);
         startActivity(intent);
 
     }

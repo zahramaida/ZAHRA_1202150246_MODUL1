@@ -22,10 +22,12 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
         Restoran = (TextView) findViewById(R.id.Resto);
         Menu = (TextView) findViewById(R.id.Menu);
         Porsi = (TextView) findViewById(R.id.Portion);
         Harga = (TextView) findViewById(R.id.Harga);
+
         Intent intent = getIntent();
 
         resto = intent.getStringExtra("Restoran");
@@ -33,18 +35,16 @@ public class SecondActivity extends AppCompatActivity {
         portion = intent.getIntExtra("Porsi",0);
         harga = intent.getIntExtra("Harga",0);
 
-        int hrg = Integer.valueOf(harga)*Integer.valueOf(portion);
-
         Restoran.setText(resto);
         Menu.setText(menu);
-        Porsi.setText(""+ portion);
-        Harga.setText(""+ harga);
+        Porsi.setText(""+portion);
+        Harga.setText("Rp "+harga);
 
-        if(hrg > 65000){
-            Toast toast = Toast.makeText(this, "Jangan disini makan malamnya, uang kamu tidak cukup", Toast.LENGTH_LONG);
+        if(harga < 65000){
+            Toast toast = Toast.makeText(this, "Disini aja makan malamnya", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Toast toast = Toast.makeText(this, "Disini aja makan malamnya", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "Jangan disini makan malamnya, uang kamu tidak cukup", Toast.LENGTH_LONG);
             toast.show();
         }
 
@@ -55,3 +55,4 @@ public class SecondActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
